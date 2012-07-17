@@ -1,48 +1,45 @@
 define(
-    ['jquery', 'lodash', 'backbone'],
+['jquery', 'lodash', 'backbone'],
 
-    function($, _, Backbone) {
+function($, _, Backbone) {
 
+    tpl = {
 
+        // Hash of preloaded templates for the app
+        templates: {},
 
-tpl = {
+        // Recursively pre-load all the templates for the app.
+        // This implementation should be changed in a production environment. All the template files should be
+        // concatenated in a single file.
+        loadTemplates: function(names, callback) {
 
-    // Hash of preloaded templates for the app
-    templates:{},
+            var that = this;
 
-    // Recursively pre-load all the templates for the app.
-    // This implementation should be changed in a production environment. All the template files should be
-    // concatenated in a single file.
-    loadTemplates:function (names, callback) {
+            var loadTemplate = function(index) {
+                    var name = names[index];
+                    console.log('Loading template: ' + name);
+                    $.get('templates/' + name + '.html', function(data) {
+                        that.templates[name] = data;
+                        index++;
+                        if (index < names.length) {
+                            loadTemplate(index);
+                        } else {
+                            callback();
+                        }
+                    });
+                };
 
-        var that = this;
+            loadTemplate(0);
+        },
 
-        var loadTemplate = function (index) {
-            var name = names[index];
-            console.log('Loading template: ' + name);
-            $.get('templates/' + name + '.html', function (data) {
-                that.templates[name] = data;
-                index++;
-                if (index < names.length) {
-                    loadTemplate(index);
-                } else {
-                    callback();
-                }
-            });
+        // Get template by name from hash of preloaded templates
+        get: function(name) {
+            return this.templates[name];
         }
 
-        loadTemplate(0);
-    },
+    };
 
-    // Get template by name from hash of preloaded templates
-    get:function (name) {
-        return this.templates[name];
-    }
-
-};
-
-return tpl;
+    return tpl;
 
 
-    }
-);
+});

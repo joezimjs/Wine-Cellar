@@ -1,32 +1,30 @@
 define(
-    ['jquery', 'lodash', 'backbone', 'utils/tpl'],
+['jquery', 'lodash', 'backbone', 'utils/tpl'],
 
-    function($, _, Backbone, tpl) {
+function($, _, Backbone, tpl) {
 
+    HeaderView = Backbone.View.extend({
 
-HeaderView = Backbone.View.extend({
+        initialize: function() {
+            this.template = _.template(tpl.get('header'));
+        },
 
-    initialize:function () {
-        this.template = _.template(tpl.get('header'));
-    },
+        render: function(eventName) {
+            this.$el.html(this.template());
+            return this.el;
+        },
 
-    render:function (eventName) {
-        this.$el.html(this.template());
-        return this.el;
-    },
+        events: {
+            "click .new": "newWine"
+        },
 
-    events:{
-        "click .new":"newWine"
-    },
+        newWine: function(event) {
+            app.navigate("wines/new", true);
+            return false;
+        }
 
-    newWine:function (event) {
-        app.navigate("wines/new", true);
-        return false;
-    }
+    });
+
+    return HeaderView;
 
 });
-
-return HeaderView;
-
-    }
-);

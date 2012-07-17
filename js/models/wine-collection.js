@@ -1,12 +1,12 @@
 define(
-	['jquery', 'lodash', 'backbone'],
+['jquery', 'lodash', 'backbone'],
 
-	function($, _, Backbone) {
-		WineCollection = Backbone.Collection.extend({
-		    model: Wine,
-		    url: "wines/"
-		});
+function($, _, Backbone) {
 
-		return WineCollection;
-	}
-);
+	WineCollection = Backbone.Collection.extend({
+		model: Wine,
+		url: "wines/"
+	});
+
+	return WineCollection;
+});
