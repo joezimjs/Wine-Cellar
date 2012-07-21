@@ -1,5 +1,15 @@
-require(
-['jquery', 'lodash', 'backbone', 'views/header', 'views/start', 'views/wine-details', 'views/wine-list', 'utils/tpl', 'models/wine-model', 'models/wine-collection'],
+require([
+    'jquery',
+    'lodash',
+    'backbone',
+    'views/header',
+    'views/start',
+    'views/wine-details',
+    'views/wine-list',
+    'utils/tpl',
+    'models/wine-model',
+    'models/wine-collection'
+],
 
 function($, _, Backbone, HeaderView, StartView, WineView, WineListView, tpl, Wine, WineCollection) {
 
