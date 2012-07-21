@@ -3,7 +3,7 @@ define(
 
 function($, _, Backbone, tpl) {
 
-    WineListView = Backbone.View.extend({
+    var WineListView = Backbone.View.extend({
 
         tagName: 'ul',
 
@@ -26,7 +26,7 @@ function($, _, Backbone, tpl) {
         }
     });
 
-    WineListItemView = Backbone.View.extend({
+    var WineListItemView = Backbone.View.extend({
 
         tagName: "li",
 

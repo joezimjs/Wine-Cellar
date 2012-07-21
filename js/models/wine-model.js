@@ -3,7 +3,7 @@ define(
 
 function($, _, Backbone) {
 
-    Wine = Backbone.Model.extend({
+    var Wine = Backbone.Model.extend({
         urlRoot: "wines/",
         defaults: {
             "id": null,

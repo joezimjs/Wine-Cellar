@@ -3,7 +3,7 @@ define(
 
 function($, _, Backbone) {
 
-    tpl = {
+    var tpl = {
 
         // Hash of preloaded templates for the app
         templates: {},

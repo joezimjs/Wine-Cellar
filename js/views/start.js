@@ -3,7 +3,7 @@ define(
 
 function($, _, Backbone, tpl) {
 
-	StartView = Backbone.View.extend({
+	var StartView = Backbone.View.extend({
 
 		initialize: function() {
 			this.template = _.template(tpl.get('start'));

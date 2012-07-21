@@ -3,7 +3,7 @@ define(
 
 function($, _, Backbone, tpl) {
 
-    WineView = Backbone.View.extend({
+    var WineView = Backbone.View.extend({
 
         tagName: "div",
         // Not required since 'div' is the default if no el or tagName specified

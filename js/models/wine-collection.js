@@ -3,7 +3,7 @@ define(
 
 function($, _, Backbone, Wine) {
 
-	WineCollection = Backbone.Collection.extend({
+	var WineCollection = Backbone.Collection.extend({
 		model: Wine,
 		url: "wines/"
 	});

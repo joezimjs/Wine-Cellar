@@ -3,7 +3,7 @@ define(
 
 function($, _, Backbone, tpl) {
 
-    HeaderView = Backbone.View.extend({
+    var HeaderView = Backbone.View.extend({
 
         initialize: function() {
             this.template = _.template(tpl.get('header'));
