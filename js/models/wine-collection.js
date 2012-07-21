@@ -1,7 +1,7 @@
 define(
-['jquery', 'lodash', 'backbone'],
+['jquery', 'lodash', 'backbone', 'models/wine-model'],
 
-function($, _, Backbone) {
+function($, _, Backbone, Wine) {
 
 	WineCollection = Backbone.Collection.extend({
 		model: Wine,
